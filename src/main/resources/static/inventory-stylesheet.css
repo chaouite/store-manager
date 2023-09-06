@@ -1,0 +1,95 @@
+body {
+  font-size: 1.25em;
+  font-family: sans-serif;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+table {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  margin-top: 100px;
+}
+
+th {
+  position: relative;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
+  background-color: #b23535;
+  color: white;
+  font-size: 20px;
+
+
+}
+
+td {
+  font-size: 20px;
+}
+
+table a {
+  font-size: 25px;
+  float: left;
+  padding: 10px;
+  text-decoration: none;
+  background-color: #b23535;
+  color: white;
+  border-radius: 20px;
+}
+
+table a:hover {
+  font-size: 25px;
+  float: left;
+  padding: 10px;
+  text-decoration: none;
+  background-color: #c23c3c;
+  color: white;
+  border-radius: 20px;
+}
+
+.topnav {
+  background-color: #b23535;
+  overflow: hidden;
+  font-family: sans-serif;
+  position: absolute;
+  width: 100%;
+}
+
+.topnav a {
+  color: white;
+  font-size: 25px;
+  float: left;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.topnav a:hover {
+  background-color: #c29898;
+  color: black;
+}
+
+
+.topnav a.active {
+  background-color: white;
+  color: #b23535;
+}
+
+.success {
+  color: white;
+  background-color: green;
+  position: relative;
+  top: 100px;
+  padding: 30px;
+}
+
+.fail {
+  color: white;
+  background-color: rgb(151, 0, 0);
+  position: relative;
+  top: 100px;
+  padding: 30px;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link th:href="@{/form-stylesheet.css}" rel="stylesheet">
+</head>
+
+<body>
+  <div class="topnav">
+    <a class="active" th:href="@{/}">Form</a>
+    <a th:href="@{/inventory}">Inventory</a>
+  </div>
+  <div>
+    <h2> ILEA Store welcomes you</h2>
+    <form method="post" th:action="@{/submitForm}" th:object="${item}">
+      <input placeholder="id" type="hidden" name="id" th:field="*{id}" />
+      <select name="category" th:field="*{category}">
+        <option value="">Choose a category</option>
+        <option th:each="category : ${categories}" th:value="${#strings.toLowerCase(category)}"
+          th:text="${#strings.toLowerCase(category)}"></option>
+      </select>
+      <input placeholder="name" type="text" name="name" th:field="*{name}" />
+      <input placeholder="price" type="text" name="price" th:field="*{price}" />
+      <input placeholder="discount" type="text" name="discount" th:field="*{discount}" />
+      <h4>Select order date</h4>
+      <input type="date" name="date" th:field="*{date}" />
+      <input type="submit" value="Submit Item">
+    </form>
+  </div>
+</body>
+
+</html>
