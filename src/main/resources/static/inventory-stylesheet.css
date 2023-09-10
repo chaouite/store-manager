@@ -20,7 +20,7 @@ th {
   height: auto;
   width: auto;
   overflow: auto;
-  background-color: #b23535;
+  background-color: #3d1212;
   color: white;
   font-size: 20px;
 
@@ -36,7 +36,7 @@ table a {
   float: left;
   padding: 10px;
   text-decoration: none;
-  background-color: #b23535;
+  background-color: #3d1212;
   color: white;
   border-radius: 20px;
 }
@@ -52,7 +52,7 @@ table a:hover {
 }
 
 .topnav {
-  background-color: #b23535;
+  background-color: #3d1212;
   overflow: hidden;
   font-family: sans-serif;
   position: absolute;
@@ -75,7 +75,7 @@ table a:hover {
 
 .topnav a.active {
   background-color: white;
-  color: #b23535;
+  color: #3d1212;
 }
 
 .success {

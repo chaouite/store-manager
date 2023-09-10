@@ -14,16 +14,28 @@
     <h2> ILEA Store welcomes you</h2>
     <form method="post" th:action="@{/submitForm}" th:object="${item}">
       <input placeholder="id" type="hidden" name="id" th:field="*{id}" />
+
       <select name="category" th:field="*{category}">
         <option value="">Choose a category</option>
-        <option th:each="category : ${categories}" th:value="${#strings.toLowerCase(category)}"
-          th:text="${#strings.toLowerCase(category)}"></option>
+        <option value="Furniture">Furniture</option>
+        <option value="Tech">Tech</option>
+        <option value="Office supplies">Office supplies</option>
       </select>
+      <p style="color: red; margin-top: -28px" th:errors="*{category}"></p>
+
       <input placeholder="name" type="text" name="name" th:field="*{name}" />
-      <input placeholder="price" type="text" name="price" th:field="*{price}" />
-      <input placeholder="discount" type="text" name="discount" th:field="*{discount}" />
-      <h4>Select order date</h4>
+      <p style="color: red; margin-top: -28px" th:errors="*{name}"></p>
+
+      <input placeholder="price" type="number" name="price" th:field="*{price}" />
+      <p style="color: red; margin-top: -28px" th:errors="*{price}"></p>
+
+      <input placeholder="discount" type="number" name="discount" th:field="*{discount}" />
+      <p style="color: red; margin-top: -28px" th:errors="*{discount}"></p>
+
+      <h4 style="margin-top: 28px">Select order date</h4>
+
       <input type="date" name="date" th:field="*{date}" />
+      <p style="color: red; margin-top: -28px" th:errors="*{date}"></p>
       <input type="submit" value="Submit Item">
     </form>
   </div>

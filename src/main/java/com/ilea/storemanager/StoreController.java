@@ -10,7 +10,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import jakarta.validation.Valid;
+
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 
 @Controller
 public class StoreController {
@@ -20,23 +24,24 @@ public class StoreController {
   @GetMapping("/")
   public String getForm(Model model, @RequestParam(required = false) String id) {
     int itemToDisplayIndex = findItemByIndex(id);
-    model.addAttribute("categories", Categories.values());
     model.addAttribute("item", (itemToDisplayIndex >= 0) ? itemsList.get(itemToDisplayIndex) : new Item());
     return "form";
   }
 
   @PostMapping("/submitForm")
-  public String submitFormHandler(Item item, RedirectAttributes redirectAttributes) {
+  public String submitFormHandler(@Valid Item item, BindingResult result, RedirectAttributes redirectAttributes) {
+    if (result.hasErrors()) {
+      return "form";
+    }
     int oldItemIndex = findItemByIndex(item.getId());
     if (oldItemIndex >= 0) {
-      if(within3Days(item.getDate(), itemsList.get(oldItemIndex).getDate())){
+      if (within3Days(item.getDate(), itemsList.get(oldItemIndex).getDate())) {
         itemsList.set(oldItemIndex, item);
         redirectAttributes.addFlashAttribute("notification", Constants.SUCCESS_MESSAGE);
-      }
-      else{
+      } else {
         redirectAttributes.addFlashAttribute("notification", Constants.FAIL_MESSAGE);
       }
-      
+
     } else {
       itemsList.add(item);
       redirectAttributes.addFlashAttribute("notification", Constants.SUCCESS_MESSAGE);
