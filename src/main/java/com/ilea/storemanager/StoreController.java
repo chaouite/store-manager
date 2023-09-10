@@ -30,6 +30,11 @@ public class StoreController {
 
   @PostMapping("/submitForm")
   public String submitFormHandler(@Valid Item item, BindingResult result, RedirectAttributes redirectAttributes) {
+    
+    if(item.getDiscount().compareTo(item.getPrice()) >= 0)
+    {
+      result.rejectValue("discount","","Discount can not be more than the price");
+    }
     if (result.hasErrors()) {
       return "form";
     }
