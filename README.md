@@ -43,6 +43,7 @@ The application should now be running locally at http://localhost:8080.
 
 ## Features
 
+* Three layers codebase
 * Add new items to the inventory.
 * Update existing items in the inventory.
 * View the list of items in the inventory.
