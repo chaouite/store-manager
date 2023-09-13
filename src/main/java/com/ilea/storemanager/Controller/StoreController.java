@@ -18,7 +18,11 @@ import org.springframework.validation.BindingResult;
 @Controller
 public class StoreController {
 
-  StoreService service = new StoreService();
+  StoreService service;
+
+  public StoreController(StoreService service) {
+    this.service = service;
+  }
 
   @GetMapping("/")
   public String getForm(Model model, @RequestParam(required = false) String id) {

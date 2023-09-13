@@ -3,11 +3,17 @@ package com.ilea.storemanager.Service;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.ilea.storemanager.Item;
 import com.ilea.storemanager.Repo.StoreRepo;
 
+@Service
 public class StoreService {
-  StoreRepo repo = new StoreRepo();
+  @Autowired
+  StoreRepo repo ;
 
   public List<Item> getItems() {
     return repo.getItems();
