@@ -13,7 +13,7 @@ import com.ilea.storemanager.Repo.StoreRepo;
 @Service
 public class StoreService {
   @Autowired
-  StoreRepo repo ;
+  StoreRepo repo;
 
   public List<Item> getItems() {
     return repo.getItems();
@@ -41,7 +41,7 @@ public class StoreService {
     if (oldItemIndex >= 0) {
       if (in3Days(item.getDate(), getItem(oldItemIndex).getDate())) {
         updateItem(oldItemIndex, item);
-         return "ok";
+        return "ok";
       } else {
         return "notOk";
       }
@@ -51,7 +51,7 @@ public class StoreService {
     }
   }
 
-  private int findIndexItemById(String id) {
+  public int findIndexItemById(String id) {
     for (int i = 0; i < getItems().size(); i++) {
       if (getItems().get(i).getId().equals(id))
         return i;

@@ -40,6 +40,16 @@ public class Item {
     this.id = UUID.randomUUID().toString();
   }
 
+  public Item(String category, String name, BigDecimal price, BigDecimal discount, Date date) {
+    this.category = category;
+    this.name = name;
+    this.price = price;
+    this.discount = discount;
+    this.date = date;
+    // otherwise it will be null
+    this.id = UUID.randomUUID().toString();
+  }
+
   public String getId() {
     return this.id;
   }
