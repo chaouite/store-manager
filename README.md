@@ -51,6 +51,7 @@ The application should now be running locally at http://localhost:8080.
 * Notify user: success / failure
 * Prevent updates if the new order date has a 3-day discrepancy from the previous one.
 * Prevent invalid inputs such as future dates, special characters, blank entries, missing categories, negative values, and discounts greater than the price ...
+* Unit tests
 
 ## Dependencies
 
@@ -59,6 +60,7 @@ The application should now be running locally at http://localhost:8080.
 * Spring Boot Starter Test
 * Spring Boot Starter Thymeleaf
 * Spring Boot Starter Validation
+* Junit
 
 ## Overview
 
